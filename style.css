@@ -1,0 +1,206 @@
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Gem scrollbar i Chrome, Edge og Opera */
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* NAVIGATION */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.dropdown-toggle {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%, -10px) scaleY(0);
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.dropdown-content.show {
+    display: block;
+    transform: translate(-50%, 0) scaleY(1);
+}
+
+.dropdown:hover .dropdown-content {
+    transform: translate(-50%, 0) scaleY(1);
+}
+
+.dropdown:hover .dropdown-toggle {
+    background-color: #444;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.home:hover,
+.dropdown-toggle:hover,
+.contact:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+@media only screen and (max-width :600px) {
+    .nav {
+        flex-direction: column;
+    }
+    .dropdown-toggle {
+        width: auto;
+    }
+    .dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+    .dropdown-content.show {
+        display: block;
+    }
+}
+
+@media only screen and (min-width :600px) {
+    .dropdown-toggle:hover+.dropdown-content {
+        display: block;
+        transform: translate(-50%, 0) scaleY(1);
+    }
+    .nav:hover .dropdown-content {
+        max-height: 500px;
+        opacity: 1;
+    }
+    .home,
+    .dropdown-toggle,
+    .contact {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    background-image: url('./img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+}
+
+#header-h1 {
+    display: flex;
+    color: black;
+    letter-spacing: 12px;
+    font-size: 63px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* PRODUKTER */
+
+.product {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    margin: 20px;
+    padding: 20px;
+    width: calc(33.33% - 40px);
+}
+
+.product img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.product h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .product {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 300px;
+        margin: auto;
+        padding: auto;
+        justify-content: space-between;
+    }
+}
