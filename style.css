@@ -208,6 +208,8 @@ main {
         margin: auto;
         padding: auto;
         justify-content: space-between;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
     }
 }
 
@@ -218,6 +220,6 @@ main {
         letter-spacing: 6px;
         font-size: 43px;
         font-family: 'Roboto', sans-serif;
-        padding-top: 30%;
+        padding-top: 60px;
     }
 }
