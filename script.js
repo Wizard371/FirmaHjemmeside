@@ -55,7 +55,7 @@ window.addEventListener('resize', function() {
 var addToCartButtons = document.querySelectorAll('.product button');
 
 // Tag cart-total
-var cartTotal = document.getElementById('cart-total');
+var cartTotal = document.getElementByClassName('cart-total');
 
 // Sæt pris til 0
 var total = 0;
